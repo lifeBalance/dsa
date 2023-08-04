@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  jupyter-lab:
+    image: jupyter-lab-img
+    container_name: jupyter-lab-cont
+    hostname: jupyter-lab
+    build: 
+      context: ./
+      dockerfile: ./docker/Dockerfile
+      args:
+        USER_HOST: ${USER} # Pass the host's user to the Dockerfile.
+        UID_HOST: "${UID:-1000}"
+        GID_HOST: "${GID:-1000}"
+
+    environment:
+      SHELL: /bin/bash
+      JUPYTER_TOKEN: "foo" # Access the lab with the query string: ?token=foo
+
+    volumes:
+      - ./src:/home/${USER}/src # bind mount
+
+    ports:
+      - 8888:8888
