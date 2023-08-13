@@ -1,9 +1,9 @@
 version: "3.8"
 services:
   jupyter-lab:
-    image: jupyter-lab-img
-    container_name: jupyter-lab-cont
-    hostname: jupyter-lab
+    container_name: jupyter-lab-dsa-cont
+    hostname: jupyter-lab-dsa
+    image: jupyter-lab-dsa-img
     build: 
       context: ./
       dockerfile: ./docker/Dockerfile
