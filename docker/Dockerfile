@@ -27,7 +27,7 @@ ENV PATH="/home/${USER_HOST}/.local/bin:${PATH}"
 
 # Install Python dependencies
 RUN pip install --upgrade pip
-RUN pip install --user jupyterlab jupyter-book theme-darcula nb-js-diagrammers
+RUN pip install --user jupyterlab jupyter-book theme-darcula nb-js-diagrammers jupyterlab_myst ipywidgets
 RUN pip install --user manim
 
 # Set the working directory.
