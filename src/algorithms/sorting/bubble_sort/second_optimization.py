@@ -18,11 +18,15 @@ def bubble_sort(lst, in_order, swap):
     """
     n = len(lst) - 1
     while n > 0:
+        sorted = True
         i = 0
         while i < n:
             if not in_order(lst[i], lst[i + 1]):
                 swap(lst, i)
+                sorted = False
             i += 1
+        if sorted:
+            break
         n -= 1
 
 
