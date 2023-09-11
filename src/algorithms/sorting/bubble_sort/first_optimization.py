@@ -1,10 +1,3 @@
-def ascending_order(a, b):
-    """
-    Takes a list as an argument and returns True if the list is in ascending order, and False otherwise.
-    """
-    return a < b
-
-
 def swap(lst, i):
     """
     Swap its two list item arguments.
@@ -28,5 +21,11 @@ def bubble_sort(lst, in_order, swap):
 
 # Let's try it!
 list = [7, 4, 5, 6, 1, 2, 3]
-bubble_sort(list, ascending_order, swap)
+
+bubble_sort(
+    list,
+    lambda a, b: a < b, # Returns True if ascending order; False otherwise
+    swap
+)
+
 print(list)
