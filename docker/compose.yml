@@ -6,7 +6,7 @@ services:
     image: jupyter-lab-dsa-img
     build: 
       context: ./
-      dockerfile: ./docker/Dockerfile
+      dockerfile: ./Dockerfile
       args:
         USER_HOST: ${USER} # Pass the host's user to the Dockerfile.
         UID_HOST: "${UID:-1000}"
@@ -17,7 +17,7 @@ services:
       JUPYTER_TOKEN: "foo" # Access the lab with the query string: ?token=foo
 
     volumes:
-      - ./src:/home/${USER}/src # bind mount
+      - ../src:/home/${USER}/src # bind mount
 
     ports:
       - 8888:8888
